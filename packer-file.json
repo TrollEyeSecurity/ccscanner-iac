@@ -2,9 +2,10 @@
   "variables": {
     "aws_access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
     "aws_secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
-    "aws_vpi_id": "{{ env `AWS_VPI_ID` }}",
+    "aws_vpc_id": "{{ env `AWS_VPC_ID` }}",
     "aws_subnet_id": "{{ env `AWS_SUBNET_ID` }}",
     "aws_instance_type": "{{ env `AWS_INSTANCE_TYPE` }}",
+    "aws_region": "{{env `AWS_REGION`}}",
     "ccscanner_name": "ccscanner-{{ timestamp }}"
   },
   "builders": [
@@ -12,8 +13,8 @@
       "type": "amazon-ebs",
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key`}}",
-      "region": "us-east-1",
-      "vpc_id": "{{user `aws_vpi_id`}}",
+      "region": "{{user `aws_region`}}",
+      "vpc_id": "{{user `aws_vpc_id`}}",
       "subnet_id": "{{user `aws_subnet_id`}}",
       "associate_public_ip_address": true,
       "source_ami_filter": {
