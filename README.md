@@ -8,17 +8,19 @@ Docker containers. This repository contains packer files and scripts to automate
 
 1) setx AWS_ACCESS_KEY_ID "Your AWS Access Key ID"
 2) setx AWS_SECRET_ACCESS_KEY "Your AWS Secret Key"
-3) setx AWS_VPI_ID "The AWS VPI ID you are building the AMI in"
+3) setx AWS_VPC_ID "The AWS VPC ID you are building the AMI in"
 4) setx AWS_SUBNET_ID "The AWS Subnet ID you are building the AMI in"
-5) setx AWS_INSTANCE_TYPE "The AWS instance type you will be useing"
+5) setx AWS_INSTANCE_TYPE "The AWS instance type you will be using"
+6) setx AWS_REGION "The AWS region to deploy the AMI"
 
 **_MacOS:_**
 
 1) export AWS_ACCESS_KEY_ID="Your AWS Access Key ID"
 2) export AWS_SECRET_ACCESS_KEY="Your AWS Secret Key"
-3) export AWS_VPI_ID="The AWS VPI ID you are building the AMI in"
+3) export AWS_VPC_ID="The AWS VPC ID you are building the AMI in"
 4) export AWS_SUBNET_ID="The AWS Subnet ID you are building the AMI in"
-5) export AWS_INSTANCE_TYPE="The AWS instance type you will be useing"
+5) export AWS_INSTANCE_TYPE="The AWS instance type you will be using"
+6) export AWS_REGION="The AWS region to deploy the AMI"
 
 **_Download packer:_**
 
