@@ -43,6 +43,11 @@
       "source": "configs/fury.list",
       "destination": "/tmp/"
     },
+     {
+      "type": "file",
+      "source": "configs/sudoers",
+      "destination": "/tmp/"
+    },
     {
       "type": "shell",
       "script": "scripts/provision.sh"
