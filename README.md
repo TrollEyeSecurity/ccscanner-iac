@@ -25,7 +25,7 @@ Docker containers. This repository contains packer files and scripts to automate
 **_Download packer:_**
 
 1) Download the proper Packer binary from https://www.packer.io/downloads.
-2) Unzip the package into the `ccscanner-ami` directory.
+2) Unzip the package into the `ccscanner-iac` directory.
 
 **_AMI:_**
 
