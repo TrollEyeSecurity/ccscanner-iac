@@ -18,7 +18,7 @@ Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/b
 
 # User privilege specification
 root		ALL=(ALL:ALL) ALL
-ccscanner	ALL=(ALL) NOPASSWD:/usr/sbin/adduser,/usr/sbin/usermod,/usr/sbin/chown,/usr/bin/systemctl enable openvpn@client.service, /usr/bin/systemctl start openvpn@client.service, /usr/bin/systemctl stop openvpn@client.service, /usr/bin/mv, /usr/bin/rm -rf /etc/openvpn/client.conf
+ccscanner ALL = NOPASSWD: /usr/sbin/adduser, /usr/sbin/usermod, /usr/sbin/chown, /usr/bin/systemctl, /usr/bin/mv, /usr/bin/rm, /usr/sbin/dmidecode
 # Members of the admin group may gain root privileges
 %admin ALL=(ALL) ALL
 
