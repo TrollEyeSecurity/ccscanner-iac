@@ -1,6 +1,6 @@
-# Command Center Scanner AMI #
+# Command Center Scanner IAC #
 [Command Center](https://www.critical-sec.com/command-center/) is a full featured vulnerability management platform for penetration testing teams. Command Center Scanner is the client application designed to perform tasks during penetration tests and security audits using
-Docker containers. This repository contains packer files and scripts to automate building an AMI image for using CCScanner in AWS.
+Docker containers. This repository contains packer files and scripts to automate building AMI, VWWare, and KVM images of CCScanner.
 
 ## Set your environment variables ##
 
@@ -27,9 +27,17 @@ Docker containers. This repository contains packer files and scripts to automate
 1) Download the proper Packer binary from https://www.packer.io/downloads.
 2) Unzip the package into the `ccscanner-ami` directory.
 
-**_Build the AMI:_**
+**_AMI:_**
 
 Your build system must have ssh access to the AMI to run the `provision.sh` script. The `packer-file.json` is configured to use a public address.
 If this is unacceptable modify the `packer-file.json` and change `associate_public_ip_address` to `false`.
 
-1) Run the following command - `packer build packer-file.json`
+1) Run the following command - `packer build packer-file-AMI.json`
+
+
+**_VMWare:_**
+
+Your build system must have ssh access to the AMI to run the `provision.sh` script. The `packer-file.json` is configured to use a public address.
+If this is unacceptable modify the `packer-file.json` and change `associate_public_ip_address` to `false`.
+
+1) Run the following command - `packer build packer-file-VMWARE.json`

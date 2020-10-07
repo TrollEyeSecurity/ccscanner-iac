@@ -1,0 +1,33 @@
+#cloud-config
+autoinstall:
+  version: 1
+  locale: en_US
+  keyboard:
+    layout: en
+    variant: us
+  network:
+    network:
+      version: 2
+      ethernets:
+        ens33:
+          dhcp4: true
+  storage:
+    layout:
+      name: lvm
+  ssh:
+    install-server: yes
+    ssh_pwauth: yes
+  identity:
+    hostname: ccscanner-template
+    username: ubuntu
+    password: $6$IyUb/t6RTkUbb0id$tFj4F2mobB3vwscLPcRlfWkesMUC5HvPOTUV.8xemXe.ez4SD3IVqcdDyDY0YJzXtk3ueDI6txvLCoVPvOihQ.
+  user-data:
+    disable_root: yes
+    users:
+      - name: ubuntu
+        groups: sudo
+        lock-passwd: false
+        shell: /bin/bash
+  late-commands:
+    - 'sed -i "s/dhcp4: true/&\n      dhcp-identifier: mac/" /target/etc/netplan/00-installer-config.yaml'
+    - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu

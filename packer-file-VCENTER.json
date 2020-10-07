@@ -1,0 +1,78 @@
+{
+  "variables": {
+    "ccscanner_name": "ccscanner-{{ timestamp }}",
+    "vcenter_server": "vcenter.insecure-it.local",
+    "esxi_host": "esxi2.insecure-it.local",
+    "username": "administrator@insecure-it.local",
+    "password": "9Eb9!p@f4ld3",
+    "datastore": "esxi2-iSCSIDatastore",
+    "network": "VLAN10",
+    "http_server": "{{env `HTTP_SERVER`}}",
+    "http_port": "{{env `HTTP_PORT`}}"
+  },
+  "builders": [
+    {
+      "type": "vsphere-iso",
+      "iso_url": "https://releases.ubuntu.com/20.04/ubuntu-20.04.1-live-server-amd64.iso",
+      "iso_checksum": "sha256:443511f6bf12402c12503733059269a2e10dec602916c0a75263e5d990f6bb93",
+      "boot_wait": "5s",
+      "boot_command": [
+        "<esc><esc><esc>",
+        "<enter><wait>",
+        "/casper/vmlinuz ",
+        "root=/dev/sr0 ",
+        "initrd=/casper/initrd ",
+        "autoinstall ",
+        "ds=nocloud-net;s=http://{{user `http_server` }}:{{user `http_port` }}/",
+        "<enter><wait>"
+      ],
+      "shutdown_command": "sudo poweroff",
+      "ssh_username": "ubuntu",
+      "ssh_password": "Youshou1dch@ng3measap",
+      "ssh_host": "172.31.254.228",
+      "ssh_pty": true,
+      "ssh_timeout": "30m",
+      "ssh_handshake_attempts": "40",
+      "guest_os_type": "ubuntu64Guest",
+      "vm_name": "{{user `ccscanner_name`}}",
+      "username": "{{user `username`}}",
+      "password": "{{user `password`}}",
+      "cpus": 4,
+      "ram": 8192,
+      "convert_to_template": true,
+      "vcenter_server": "{{user `vcenter_server`}}",
+      "host": "{{user `esxi_host`}}",
+      "datastore": "{{user `datastore`}}",
+      "insecure_connection": true,
+      "cluster": "HQCluster",
+      "storage": [
+        {
+          "disk_size": 61440,
+          "disk_thin_provisioned": true
+        }
+      ],
+      "network_adapters": [
+        {
+          "network": "{{user `network`}}",
+          "network_card": "vmxnet3"
+        }
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "configs/fury.list",
+      "destination": "/tmp/"
+    },
+     {
+      "type": "file",
+      "source": "configs/sudoers",
+      "destination": "/tmp/"
+    },
+    {
+      "type": "shell",
+      "script": "scripts/provision-VMWARE.sh"
+    }
+  ]
+}
