@@ -37,7 +37,5 @@ If this is unacceptable modify the `packer-file.json` and change `associate_publ
 
 **_VMWare:_**
 
-Your build system must have ssh access to the AMI to run the `provision.sh` script. The `packer-file.json` is configured to use a public address.
-If this is unacceptable modify the `packer-file.json` and change `associate_public_ip_address` to `false`.
 
 1) Run the following command - `packer build packer-file-VMWARE.json`
