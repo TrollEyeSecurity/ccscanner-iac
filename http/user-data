@@ -10,11 +10,7 @@ autoinstall:
       version: 2
       ethernets:
         ens160:
-          dhcp4: no
-          addresses: [172.31.254.228/24]
-          gateway4: 172.31.254.1
-          nameservers:
-            addresses: [172.31.254.15]
+          dhcp4: true
   storage:
     layout:
       name: lvm
@@ -32,6 +28,20 @@ autoinstall:
         groups: sudo, docker
         lock-passwd: false
         shell: /bin/bash
+  package_update: true
+  apt:
+     sources:
+       fury.list:
+         source: "deb [trusted=yes] https://apt.fury.io/criticalsecurity/ /"
+         filename: fury.list
+  packages:
+    - docker.io
+    - sysstat
+    - openvpn
+    - open-vm-tools
+    - ansible
+    - ccscanner
+  package_upgrade: true
   late-commands:
-    - 'sed -i "s/dhcp4: true/&\n      dhcp-identifier: mac/" /target/etc/netplan/00-installer-config.yaml'
     - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
+    - echo 'ccscanner ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ccscanner
