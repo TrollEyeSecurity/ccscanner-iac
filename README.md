@@ -10,7 +10,7 @@ Docker containers. This repository contains packer files and scripts to automate
 2) Unzip the package into the `ccscanner-iac` directory.
 
 
-**_Windows - Deploy AMI:_**
+**_Windows - Deploy an AMI:_**
 
 1) setx AWS_ACCESS_KEY_ID "Your AWS Access Key ID"
 2) setx AWS_SECRET_ACCESS_KEY "Your AWS Secret Key"
@@ -20,7 +20,7 @@ Docker containers. This repository contains packer files and scripts to automate
 6) setx AWS_REGION "The AWS region to deploy the AMI"
 
 
-**_Windows - Deploy vCenter:_**
+**_Windows - Deploy a vCenter Template:_**
 
 1) setx VCENTER_SEVER "Your vCenter Server ip or hostname"
 2) setx VCENTER_USERNAME "Your vCenter username"
@@ -34,7 +34,7 @@ Docker containers. This repository contains packer files and scripts to automate
 10) setx STATIC_IP "The static IP address for the scanner template during initial setup"
 
 
-**_MacOS - Deploy AMI:_**
+**_MacOS - Deploy an AMI:_**
 
 1) export AWS_ACCESS_KEY_ID="Your AWS Access Key ID"
 2) export AWS_SECRET_ACCESS_KEY="Your AWS Secret Key"
@@ -44,7 +44,7 @@ Docker containers. This repository contains packer files and scripts to automate
 6) export AWS_REGION="The AWS region to deploy the AMI"
 
 
-**_MacOS - Deploy vCenter:_**
+**_MacOS - Deploy a vCenter Template:_**
 
 1) export VCENTER_SEVER="Your vCenter Server ip or hostname"
 2) export VCENTER_USERNAME="Your vCenter username"
