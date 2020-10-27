@@ -9,8 +9,12 @@ autoinstall:
     network:
       version: 2
       ethernets:
-        ens33:
-          dhcp4: true
+        ens160:
+          dhcp4: no
+          addresses: [172.31.254.228/24]
+          gateway4: 172.31.254.1
+          nameservers:
+            addresses: [172.31.254.15]
   storage:
     layout:
       name: lvm
@@ -25,7 +29,7 @@ autoinstall:
     disable_root: yes
     users:
       - name: ubuntu
-        groups: sudo
+        groups: sudo, docker
         lock-passwd: false
         shell: /bin/bash
   late-commands:

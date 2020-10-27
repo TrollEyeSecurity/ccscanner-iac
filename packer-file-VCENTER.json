@@ -1,14 +1,16 @@
 {
   "variables": {
     "ccscanner_name": "ccscanner-{{ timestamp }}",
-    "vcenter_server": "vcenter.insecure-it.local",
-    "esxi_host": "esxi2.insecure-it.local",
-    "username": "administrator@insecure-it.local",
-    "password": "9Eb9!p@f4ld3",
-    "datastore": "esxi2-iSCSIDatastore",
-    "network": "VLAN10",
+    "vcenter_server": "{{env `VCENTER_SEVER`}}",
+    "esxi_host": "{{env `ESXI_HOST`}}",
+    "username": "{{env `VCENTER_USERNAME`}}",
+    "password": "{{env `VCENTER_PASSWORD`}}",
+    "datastore": "{{env `DATASTORE`}}",
+    "network": "{{env `VMWARE_NETWORK`}}",
     "http_server": "{{env `HTTP_SERVER`}}",
-    "http_port": "{{env `HTTP_PORT`}}"
+    "http_port": "{{env `HTTP_PORT`}}",
+    "vcenter_cluster": "{{env `VCENTER_CLUSTER`}}",
+    "static_ip": "{{env `STATIC_IP`}}"
   },
   "builders": [
     {
@@ -29,10 +31,10 @@
       "shutdown_command": "sudo poweroff",
       "ssh_username": "ubuntu",
       "ssh_password": "Youshou1dch@ng3measap",
-      "ssh_host": "172.31.254.228",
+      "ssh_host": "{{user `static_ip` }}",
       "ssh_pty": true,
       "ssh_timeout": "30m",
-      "ssh_handshake_attempts": "40",
+      "ssh_handshake_attempts": "55",
       "guest_os_type": "ubuntu64Guest",
       "vm_name": "{{user `ccscanner_name`}}",
       "username": "{{user `username`}}",
@@ -44,7 +46,7 @@
       "host": "{{user `esxi_host`}}",
       "datastore": "{{user `datastore`}}",
       "insecure_connection": true,
-      "cluster": "HQCluster",
+      "cluster": "{{user `vcenter_cluster`}}",
       "storage": [
         {
           "disk_size": 61440,
@@ -70,9 +72,14 @@
       "source": "configs/sudoers",
       "destination": "/tmp/"
     },
+     {
+      "type": "file",
+      "source": "configs/00-installer-config.yaml",
+      "destination": "/tmp/"
+    },
     {
       "type": "shell",
-      "script": "scripts/provision-VMWARE.sh"
+      "script": "scripts/provision-vmware.sh"
     }
   ]
 }

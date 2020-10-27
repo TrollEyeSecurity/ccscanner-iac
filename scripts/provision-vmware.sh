@@ -3,6 +3,7 @@
 sudo chown root:root /tmp/sudoers
 sudo mv /tmp/sudoers /etc/sudoers
 sudo mv /tmp/fury.list /etc/apt/sources.list.d/
+sudo mv /tmp/00-installer-config.yaml /etc/netplan/00-installer-config.yaml
 sudo apt -qq update
 sudo apt -qq install docker.io sysstat openvpn open-vm-tools ccscanner -y
 sudo rm -rf /home/ubuntu/.ssh/authorized_keys
