@@ -79,7 +79,7 @@ Docker containers. This repository contains packer files and scripts to automate
 *_vCenter - cmd:_*
 1) Run the following command - `packer build packer-file-VCENTER.json`
 
-_AZURE - cmd:_*
+*_AZURE - cmd:_*
 1) Run the following command - `packer build packer-file-AZURE.json`
 
 **_AMI Notes:_**
