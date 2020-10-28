@@ -19,6 +19,14 @@ Docker containers. This repository contains packer files and scripts to automate
 5) setx AWS_INSTANCE_TYPE "The AWS instance type you will be using"
 6) setx AWS_REGION "The AWS region to deploy the AMI"
 
+**_Windows - Deploy an AZURE Image:_**
+
+1) setx AZURE_CLIENT_ID "Your Azure client id"
+2) setx AZURE_CLIENT_SECRET "Your Azure client secret"
+3) setx AZURE_SUBSCRIPTION_ID "Your Azure subscription id"
+4) setx AZURE_TENANT_ID "Your Azure tenant id"
+5) setx AZURE_LOCATION "The Azure location to keep the image"
+6) setx AZURE_VM_SIZE "The default VM size"
 
 **_Windows - Deploy a vCenter Template:_**
 
@@ -43,6 +51,14 @@ Docker containers. This repository contains packer files and scripts to automate
 5) export AWS_INSTANCE_TYPE="The AWS instance type you will be using"
 6) export AWS_REGION="The AWS region to deploy the AMI"
 
+**_MacOS - Deploy an AZURE Image:_**
+
+1) export AZURE_CLIENT_ID="Your Azure client id"
+2) export AZURE_CLIENT_SECRET="Your Azure client secret"
+3) export AZURE_SUBSCRIPTION_ID="Your Azure subscription id"
+4) export AZURE_TENANT_ID="Your Azure tenant id"
+5) export AZURE_LOCATION="The Azure location to keep the image"
+6) export AZURE_VM_SIZE="The default VM size"
 
 **_MacOS - Deploy a vCenter Template:_**
 
@@ -62,6 +78,9 @@ Docker containers. This repository contains packer files and scripts to automate
 
 *_vCenter - cmd:_*
 1) Run the following command - `packer build packer-file-VCENTER.json`
+
+_AZURE - cmd:_*
+1) Run the following command - `packer build packer-file-AZURE.json`
 
 **_AMI Notes:_**
 
