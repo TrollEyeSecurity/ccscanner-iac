@@ -39,7 +39,6 @@ Docker containers. This repository contains packer files and scripts to automate
 7) setx ESXI_HOST "The ESXi host to deploy the scanner template on"
 8) setx HTTP_SERVER "The HTTP server to seed from"
 9) setx HTTP_PORT "The HTTP server port to use"
-10) setx STATIC_IP "The static IP address for the scanner template during initial setup"
 
 
 **_MacOS - Deploy an AMI:_**
@@ -71,7 +70,6 @@ Docker containers. This repository contains packer files and scripts to automate
 7) export ESXI_HOST="The ESXi host to deploy the scanner template on"
 8) export HTTP_SERVER="The HTTP server to seed from"
 9) export HTTP_PORT="The HTTP server port to use"
-10) export STATIC_IP="The static IP address for the scanner template during initial setup"
 
 *_AMI - cmd:_*
 1) Run the following command - `packer build packer-file-AMI.json`
