@@ -1,6 +1,6 @@
 # Command Center Scanner IAC #
 [Command Center](https://www.critical-sec.com/command-center/) is a full featured vulnerability management platform for penetration testing teams. Command Center Scanner is the client application designed to perform tasks during penetration tests and security audits using
-Docker containers. This repository contains packer files and scripts to automate building AMI, VMware, and KVM images of CCScanner.
+Docker containers. This repository contains packer files and scripts to automate building AMI, Azure, and VMware images of CCScanner.
 
 ## Download Packer and Set your environment variables ##
 
