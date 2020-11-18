@@ -6,6 +6,7 @@
     "azure_tenant_id": "{{env `AZURE_TENANT_ID`}}",
     "azure_location": "{{env `AZURE_LOCATION`}}",
     "azure_vm_size": "{{env `AZURE_VM_SIZE`}}",
+    "azure_resource_group_name": "{{env `AZURE_RESOURCE_GROUP_NAME`}}",
     "ccscanner_name": "ccscanner-{{ timestamp }}"
   },
   "builders": [
