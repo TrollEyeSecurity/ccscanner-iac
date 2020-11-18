@@ -27,6 +27,7 @@ Docker containers. This repository contains packer files and scripts to automate
 4) setx AZURE_TENANT_ID "Your Azure tenant id"
 5) setx AZURE_LOCATION "The Azure location to keep the image"
 6) setx AZURE_VM_SIZE "The default VM size"
+7) setx AZURE_RESOURCE_GROUP_NAME "The Azure resource group name"
 
 **_Windows - Deploy a vCenter Template:_**
 
