@@ -10,7 +10,9 @@ Docker containers. This repository contains packer files and scripts to automate
 2) Unzip the package into the `ccscanner-iac` directory.
 
 
-**_Windows - Deploy an AMI:_**
+**_If you are using a Windows OS_**
+ 
+*_Set variables for the AMI:_*
 
 1) setx AWS_ACCESS_KEY_ID "Your AWS Access Key ID"
 2) setx AWS_SECRET_ACCESS_KEY "Your AWS Secret Key"
@@ -19,7 +21,7 @@ Docker containers. This repository contains packer files and scripts to automate
 5) setx AWS_INSTANCE_TYPE "The AWS instance type you will be using"
 6) setx AWS_REGION "The AWS region to deploy the AMI"
 
-**_Windows - Deploy an AZURE Image:_**
+*_Set variables for the AZURE Image:_*
 
 1) setx AZURE_CLIENT_ID "Your Azure client id"
 2) setx AZURE_CLIENT_SECRET "Your Azure client secret"
@@ -29,7 +31,7 @@ Docker containers. This repository contains packer files and scripts to automate
 6) setx AZURE_VM_SIZE "The default VM size"
 7) setx AZURE_RESOURCE_GROUP_NAME "The Azure resource group name"
 
-**_Windows - Deploy a vCenter Template:_**
+*_Set variables for the vCenter Template:_*
 
 1) setx VCENTER_SEVER "Your vCenter Server ip or hostname"
 2) setx VCENTER_USERNAME "Your vCenter username"
@@ -42,7 +44,9 @@ Docker containers. This repository contains packer files and scripts to automate
 9) setx HTTP_PORT "The HTTP server port to use"
 
 
-**_MacOS - Deploy an AMI:_**
+**_If you are using macOS or Linux_**
+
+*_Set variables for the AMI:_*
 
 1) export AWS_ACCESS_KEY_ID="Your AWS Access Key ID"
 2) export AWS_SECRET_ACCESS_KEY="Your AWS Secret Key"
@@ -51,7 +55,7 @@ Docker containers. This repository contains packer files and scripts to automate
 5) export AWS_INSTANCE_TYPE="The AWS instance type you will be using"
 6) export AWS_REGION="The AWS region to deploy the AMI"
 
-**_MacOS - Deploy an AZURE Image:_**
+*_Set variables for the AZURE Image:_*
 
 1) export AZURE_CLIENT_ID="Your Azure client id"
 2) export AZURE_CLIENT_SECRET="Your Azure client secret"
@@ -60,7 +64,7 @@ Docker containers. This repository contains packer files and scripts to automate
 5) export AZURE_LOCATION="The Azure location to keep the image"
 6) export AZURE_VM_SIZE="The default VM size"
 
-**_MacOS - Deploy a vCenter Template:_**
+*_Set variables for the vCenter Template:_*
 
 1) export VCENTER_SEVER="Your vCenter Server ip or hostname"
 2) export VCENTER_USERNAME="Your vCenter username"
@@ -72,17 +76,18 @@ Docker containers. This repository contains packer files and scripts to automate
 8) export HTTP_SERVER="The HTTP server to seed from"
 9) export HTTP_PORT="The HTTP server port to use"
 
-*_AMI - cmd:_*
+**_From the project directory run the following command:_**
+
+*_To build the AMI:_*
 1) Run the following command - `packer build packer-file-AMI.json`
 
-*_vCenter - cmd:_*
+*_To build the vCenter Template:_*
 1) Run the following command - `packer build packer-file-VCENTER.json`
 
-*_AZURE - cmd:_*
+*_To build the AZURE Image:_*
 1) Run the following command - `packer build packer-file-AZURE.json`
 
 **_AMI Notes:_**
 
 Your build system must have ssh access to the AMI to run the `provision.sh` script. The `packer-file.json` is configured to use a public address.
-If this is unacceptable modify the `packer-file.json` and change `associate_public_ip_address` to `false`.
-
+If this is unacceptable please modify the `packer-file.json` and change `associate_public_ip_address` to `false`.
