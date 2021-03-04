@@ -1,0 +1,48 @@
+{
+  "variables": {
+    "ccappliance_name": "ccappliance-{{ timestamp }}",
+    "http_server": "{{env `HTTP_SERVER`}}",
+    "http_port": "{{env `HTTP_PORT`}}"
+  },
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "iso_url": "https://releases.ubuntu.com/20.04/ubuntu-20.04.2-live-server-amd64.iso",
+      "iso_checksum": "sha256:d1f2bf834bbe9bb43faf16f9be992a6f3935e65be0edece1dee2aa6eb1767423",
+      "boot_wait": "5s",
+      "boot_command": [
+        "<esc><esc><esc>",
+        "<enter><wait>",
+        "/casper/vmlinuz ",
+        "root=/dev/sr0 ",
+        "initrd=/casper/initrd ",
+        "autoinstall ",
+        "ds=nocloud-net;s=http://{{user `http_server` }}:{{user `http_port` }}/",
+        "<enter><wait>"
+      ],
+      "shutdown_command": "sudo poweroff",
+      "ssh_username": "ubuntu",
+      "ssh_password": "Youshou1dch@ng3measap",
+      "ssh_pty": true,
+      "ssh_timeout": "30m",
+      "ssh_handshake_attempts": "65",
+      "guest_os_type": "ubuntu64Guest",
+      "vm_name": "{{user `ccappliance_name`}}",
+      "cpus": 4,
+      "memory": 4096,
+      "disk_size": 81920,
+      "format": "ova"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "../configs/sudoers",
+      "destination": "/tmp/"
+    },
+    {
+      "type": "shell",
+      "script": "../scripts/cleanup-ova.sh"
+    }
+  ]
+}

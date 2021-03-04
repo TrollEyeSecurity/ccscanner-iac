@@ -79,13 +79,13 @@ Docker containers. This repository contains packer files and scripts to automate
 **_From the project directory run the following command:_**
 
 *_To build the AMI:_*
-1) Run the following command - `packer build packer-file-AMI.json`
+1) Run the following command - `packer build scanner/packer-file-AMI.json`
 
 *_To build the vCenter Template:_*
-1) Run the following command - `packer build packer-file-VCENTER.json`
+1) Run the following command - `packer build scanner/packer-file-VCENTER.json`
 
 *_To build the AZURE Image:_*
-1) Run the following command - `packer build packer-file-AZURE.json`
+1) Run the following command - `packer build scanner/packer-file-AZURE.json`
 
 **_AMI Notes:_**
 

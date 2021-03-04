@@ -40,12 +40,12 @@
   "provisioners": [
     {
       "type": "file",
-      "source": "configs/fury.list",
+      "source": "../configs/fury.list",
       "destination": "/tmp/"
     },
      {
       "type": "file",
-      "source": "configs/sudoers",
+      "source": "../configs/sudoers",
       "destination": "/tmp/"
     },
     {
