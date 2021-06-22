@@ -20,7 +20,7 @@
       "source_ami_filter": {
         "filters": {
           "virtualization-type": "hvm",
-          "name": "ubuntu/images/*ubuntu-focal-20.04-amd64-server-*",
+          "name": "ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*",
           "root-device-type": "ebs"
         },
         "owners": ["099720109477"],
@@ -40,17 +40,17 @@
   "provisioners": [
     {
       "type": "file",
-      "source": "../configs/fury.list",
+      "source": "configs/fury.list",
       "destination": "/tmp/"
     },
      {
       "type": "file",
-      "source": "../configs/sudoers",
+      "source": "configs/sudoers",
       "destination": "/tmp/"
     },
     {
       "type": "shell",
-      "script": "../scripts/provision-ami.sh"
+      "script": "scripts/provision-ami.sh"
     }
   ]
 }
