@@ -91,3 +91,7 @@ Docker containers. This repository contains packer files and scripts to automate
 
 Your build system must have ssh access to the AMI to run the `provision.sh` script. The `packer-file.json` is configured to use a public address.
 If this is unacceptable please modify the `packer-file.json` and change `associate_public_ip_address` to `false`.
+
+**_Referances:_**
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/build-image-with-packer#define-packer-template
+
