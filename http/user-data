@@ -5,15 +5,16 @@ autoinstall:
   keyboard:
     layout: en
     variant: us
-  network:
-    network:
-      version: 2
-      ethernets:
-        ens160:
-          dhcp4: true
-  storage:
-    layout:
-      name: lvm
+#  This may need to change
+#  network:
+#    network:
+#      version: 2
+#      ethernets:
+#        ens160:
+#          dhcp4: true
+storage:
+  layout:
+    name: lvm
   ssh:
     install-server: yes
     ssh_pwauth: yes
