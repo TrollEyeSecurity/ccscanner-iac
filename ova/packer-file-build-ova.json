@@ -37,12 +37,12 @@
   "provisioners": [
     {
       "type": "file",
-      "source": "../configs/sudoers",
+      "source": "configs/sudoers",
       "destination": "/tmp/"
     },
     {
       "type": "shell",
-      "script": "../scripts/cleanup-ova.sh"
+      "script": "scripts/cleanup-ova.sh"
     }
   ]
 }
