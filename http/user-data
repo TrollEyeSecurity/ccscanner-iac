@@ -12,9 +12,9 @@ autoinstall:
 #      ethernets:
 #        ens160:
 #          dhcp4: true
-storage:
-  layout:
-    name: lvm
+  storage:
+    layout:
+      name: lvm
   ssh:
     install-server: yes
     ssh_pwauth: yes
