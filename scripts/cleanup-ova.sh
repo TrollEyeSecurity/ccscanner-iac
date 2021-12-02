@@ -40,4 +40,5 @@ sudo sh -c "cat /dev/null > /etc/hostname"
 #cleanup apt
 sudo apt clean
 
-lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+sudo lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
