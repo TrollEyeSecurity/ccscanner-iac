@@ -63,6 +63,7 @@ Docker containers. This repository contains packer files and scripts to automate
 4) export AZURE_TENANT_ID="Your Azure tenant id"
 5) export AZURE_LOCATION="The Azure location to keep the image"
 6) export AZURE_VM_SIZE="The default VM size"
+7) export AZURE_RESOURCE_GROUP_NAME="The Azure resource group name"
 
 *_Set variables for the vCenter Template:_*
 
