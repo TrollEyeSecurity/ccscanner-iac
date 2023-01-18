@@ -10,7 +10,7 @@ Docker containers. This repository contains packer files and scripts to automate
 2) Unzip the package into the `ccscanner-iac` directory.
 
 
-**_If you are using a Windows OS_**
+## On Windows OS ##
  
 *_Set variables for the AMI:_*
 
@@ -44,7 +44,7 @@ Docker containers. This repository contains packer files and scripts to automate
 9) setx HTTP_PORT "The HTTP server port to use"
 
 
-**_If you are using macOS or Linux_**
+## On macOS or Linux ##
 
 *_Set variables for the AMI:_*
 
