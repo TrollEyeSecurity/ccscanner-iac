@@ -77,7 +77,7 @@ Docker containers. This repository contains packer files and scripts to automate
 8) export HTTP_SERVER="The HTTP server to seed from"
 9) export HTTP_PORT="The HTTP server port to use"
 
-## Run the following command: ##
+## Executing the packer file: ##
 
 *_To build the AMI:_*
 1) Run the following command - `packer build scanner/packer-file-AMI.json`
