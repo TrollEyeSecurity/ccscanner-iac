@@ -36,12 +36,7 @@ autoinstall:
          source: "deb [trusted=yes] https://apt.trolleyesecurity.com/ /"
          filename: trolleyesecurity.list
   packages:
-    - docker.io
-    - docker-compose
-    - sysstat
-    - openvpn
     - open-vm-tools
-    - ansible
     - ccscanner
   package_upgrade: true
   late-commands:
