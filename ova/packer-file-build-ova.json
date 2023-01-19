@@ -1,24 +1,23 @@
 {
   "variables": {
     "ccscanner_name": "ccscanner-{{ timestamp }}",
-    "http_server": "{{env `HTTP_SERVER`}}",
-    "http_port": "{{env `HTTP_PORT`}}"
+    "http_directory": "http/"
   },
   "builders": [
     {
       "type": "virtualbox-iso",
-      "iso_url": "https://releases.ubuntu.com/22.04/ubuntu-22.04.1-live-server-amd64.iso",
+      "iso_url": "ubuntu-22.04.1-live-server-amd64.iso",
       "iso_checksum": "sha256:10f19c5b2b8d6db711582e0e27f5116296c34fe4b313ba45f9b201a5007056cb",
       "boot_wait": "5s",
+      "cd_files" : [
+        "{{user `http_directory`}}meta-data",
+        "{{user `http_directory`}}user-data"
+      ],
+      "cd_label": "cidata",
       "boot_command": [
-        "<esc><esc><esc>",
-        "<enter><wait>",
-        "/casper/vmlinuz ",
-        "root=/dev/sr0 ",
-        "initrd=/casper/initrd ",
-        "autoinstall ",
-        "ds=nocloud-net;s=http://_gateway:{{user `http_port` }}/",
-        "<enter><wait>"
+        "e<down><down><down><end>",
+        " autoinstall ds=nocloud;",
+        "<F10>"
       ],
       "shutdown_command": "sudo poweroff",
       "ssh_username": "ubuntu",
