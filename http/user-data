@@ -5,13 +5,15 @@ autoinstall:
   keyboard:
     layout: en
     variant: us
-#  This may need to change
-#  network:
-#    network:
-#      version: 2
-#      ethernets:
-#        ens160:
-#          dhcp4: true
+  network:
+    version: 2
+    ethernets: # {}
+        enp0s3:
+            dhcp4: false
+            gateway4: 10.0.2.2
+            addresses: [10.0.2.15/24]
+            nameservers:
+                addresses: [8.8.8.8]
   storage:
     layout:
       name: lvm
@@ -19,7 +21,7 @@ autoinstall:
     install-server: yes
     ssh_pwauth: yes
   identity:
-    hostname: ccscanner-template
+    hostname: ccscanner-ova
     username: ubuntu
     password: $6$IyUb/t6RTkUbb0id$tFj4F2mobB3vwscLPcRlfWkesMUC5HvPOTUV.8xemXe.ez4SD3IVqcdDyDY0YJzXtk3ueDI6txvLCoVPvOihQ.
   user-data:
