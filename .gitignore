@@ -8,6 +8,9 @@ crash.log
 
 # For built boxes
 *.box
+*.iso
+*.ova
+*.vdi
 
 .idea/
 
