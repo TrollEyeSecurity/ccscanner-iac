@@ -2,6 +2,8 @@
 [Command Center](https://www.critical-sec.com/command-center/) is a full featured vulnerability management platform for penetration testing teams. Command Center Scanner is the client application designed to perform tasks during penetration tests and security audits using
 Docker containers. This repository contains packer files and scripts to automate building AMI, Azure, and VMware images of CCScanner.
 
+# Step 1 ) #
+
 ## Download Packer and Set your environment variables ##
 
 **_Download packer:_**
@@ -77,16 +79,18 @@ Docker containers. This repository contains packer files and scripts to automate
 8) export HTTP_SERVER="The HTTP server to seed from"
 9) export HTTP_PORT="The HTTP server port to use"
 
+# Step 2 ) #
+
 ## Executing the packer file: ##
 
 *_To build the AMI:_*
-1) Run the following command - `packer build scanner/packer-file-AMI.json`
+Run the following command - `packer build scanner/packer-file-AMI.json`
 
 *_To build the vCenter Template:_*
-1) Run the following command - `packer build scanner/packer-file-VCENTER.json`
+Run the following command - `packer build scanner/packer-file-VCENTER.json`
 
 *_To build the AZURE Image:_*
-1) Run the following command - `packer build scanner/packer-file-AZURE.json`
+Run the following command - `packer build scanner/packer-file-AZURE.json`
 
 **_AMI Notes:_**
 
@@ -96,3 +100,6 @@ If this is unacceptable please modify the `packer-file.json` and change `associa
 **_Referances:_**
 https://docs.microsoft.com/en-us/azure/virtual-machines/linux/build-image-with-packer#define-packer-template
 
+# Step 3 ) #
+
+Now you have a template to use to deploy the CCScaner image.
